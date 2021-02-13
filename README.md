@@ -1,0 +1,3 @@
+- 👋 Hi, I’m @kbehov
+- 👀 I’m interested in Javascript, React, React Native, mongoDB, Express, Linux
+- 🌱 I’m currently learning MERN

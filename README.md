@@ -1,3 +1,3 @@
 - 👋 Hi, I’m @kbehov
-- 👀 I’m interested in Javascript, React, React Native, mongoDB, Express, Linux
+- 👀 I’m interested in Javascript, React, ReactNative, mongoDB, ExpressJS, Linux, Wordpress
 - 🌱 I’m currently learning MERN

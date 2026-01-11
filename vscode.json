@@ -1,83 +1,151 @@
 {
   // ============================================
-  // EDITOR - Enhanced for productivity
+  // EDITOR - Core & Productivity
   // ============================================
-  "editor.autoIndent": "full",
-  "editor.fontWeight": "500",
+  "editor.fontFamily": "MesloLGM Nerd Font Mono, 'JetBrains Mono', Hack, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 17,
+  "editor.fontWeight": "400",
+  "editor.lineHeight": 30,
+  "editor.letterSpacing": 1.5,
+  "editor.fontLigatures": false,
+
   "editor.cursorStyle": "line",
   "editor.cursorWidth": 4,
-  "editor.smoothScrolling": true,
-  "editor.foldingStrategy": "auto", // Changed from "indentation" - better for complex code
   "editor.cursorBlinking": "smooth",
-  "editor.comments.insertSpace": true,
-  "editor.dragAndDrop": true,
-  "editor.fontSize": 18,
-  "editor.fontFamily": "MesloLGM Nerd Font Mono, Hack, 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
-  "editor.letterSpacing": 1.5,
-  "editor.selectionHighlight": true,
-  "editor.unicodeHighlight.ambiguousCharacters": false,
+
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 120,
+  "editor.minimap.enabled": false,
+  "editor.scrollBeyondLastLine": true,
+
   "editor.tabSize": 2,
-  "editor.parameterHints.enabled": true,
-  "editor.guides.bracketPairsHorizontal": true,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
-  "editor.scrollBeyondLastLine": true,
-  "editor.minimap.enabled": false,
-  "editor.lineHeight": 30,
-  "editor.guides.indentation": true,
-  "editor.multiCursorModifier": "ctrlCmd",
+
+  "editor.smoothScrolling": true,
+  "editor.mouseWheelScrollSensitivity": 1.3,
+
+  "editor.renderWhitespace": "trailing", // ← cleaner than trailing
   "editor.renderControlCharacters": true,
   "editor.renderLineHighlight": "all",
-  "editor.showFoldingControls": "mouseover", // Changed from "always" - cleaner UI
-  "editor.snippetSuggestions": "top",
-  "editor.suggest.localityBonus": true,
-  // "editor.suggest.preview": true, // NEW - preview suggestions
-  "editor.suggest.shareSuggestSelections": true, // NEW - better ML suggestions
-  "editor.suggestSelection": "recentlyUsedByPrefix",
-  "editor.tabCompletion": "on",
-  "editor.unfoldOnClickAfterEndOfLine": true,
-  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
-  "editor.fontLigatures": false,
-  "editor.renderWhitespace": "trailing",
-  "editor.linkedEditing": true,
-  "editor.stickyScroll.enabled": true,
-  "editor.inlineSuggest.enabled": true,
+
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
-  "editor.autoClosingTags": true,
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": false, // Changed from true - can be disruptive
+  "editor.guides.bracketPairsHorizontal": true,
+  "editor.guides.indentation": true,
+  "editor.guides.highlightActiveIndentation": true,
+  "editor.guides.highlightActiveBracketPair": true,
+
+  "editor.foldingStrategy": "auto",
+  "editor.showFoldingControls": "mouseover",
+
+  "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.stickyScroll.maxLineCount": 8,
+
+  "editor.inlineSuggest.enabled": true,
   "editor.quickSuggestions": {
     "other": true,
     "comments": false,
     "strings": true
   },
-  "editor.quickSuggestionsDelay": 10, // NEW - faster suggestions
-  "editor.acceptSuggestionOnEnter": "on", // NEW - explicit setting
-  "editor.accessibilitySupport": "off", // NEW - performance boost if not needed
-  "editor.find.addExtraSpaceOnTop": false, // NEW - more screen space
-  "editor.gotoLocation.multipleDeclarations": "goto", // NEW - faster navigation
-  "editor.gotoLocation.multipleDefinitions": "goto",
-  "editor.gotoLocation.multipleImplementations": "goto",
-  "search.followSymlinks": false, // Performance boost
-  "search.maintainFileSearchCache": true, // NEW - faster searches
-  "files.maxMemoryForLargeFilesMB": 4096, // NEW - handle larger files
+  "editor.quickSuggestionsDelay": 10,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.acceptSuggestionOnCommitCharacter": true,
+
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.localityBonus": true,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.tabCompletion": "on",
+
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit", // ← most important change
+    "source.fixAll.eslint": "never", // avoid duplication
+    "source.organizeImports": "explicit",
+    "source.fixAll.format": "never"
+  },
+
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.dragAndDrop": true,
+  "editor.selectionHighlight": true,
+  "editor.unicodeHighlight.invisibleCharacters": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
 
   // ============================================
-  // LANGUAGE-SPECIFIC FORMATTERS
+  // FILES & EXPLORER
+  // ============================================
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.turbo": true,
+    "**/coverage": true
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.next/cache": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.turbo": true,
+    "**/coverage": true
+  },
+
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/.turbo/**": true,
+    "**/coverage/**": true
+  },
+
+  "explorer.autoReveal": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.sortOrder": "type",
+  "explorer.compactFolders": false,
+
+  // ============================================
+  // LANGUAGE-SPECIFIC
   // ============================================
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
+      "source.fixAll": "explicit"
     }
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.wordWrap": "on",
@@ -87,125 +155,34 @@
       "other": "off"
     }
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit",
-      "source.organizeImports": "explicit"
-    }
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
-  },
-  "[dockercompose]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "editor.autoIndent": "advanced",
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
-    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.tabSize": 2
   },
 
   // ============================================
-  // FILES & EXPLORER
+  // JAVASCRIPT / TYPESCRIPT Settings
   // ============================================
-  "files.exclude": {
-    "**/.git": true,
-    "**/.DS_Store": true,
-    "jspm_packages": true,
-    "node_modules": true,
-    "**/node_modules": true,
-    "**/.next": true, // NEW - Next.js
-    "**/dist": true, // NEW - build outputs
-    "**/build": true,
-    "**/.turbo": true // NEW - Turborepo
-  },
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/.next": true,
-    "**/dist": true,
-    "**/build": true,
-    "**/.turbo": true,
-    "**/coverage": true // NEW - test coverage
-  },
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/node_modules/*/**": true,
-    "**/.next/**": true,
-    "**/dist/**": true,
-    "**/build/**": true
-  },
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1000,
-  "files.eol": "\n",
-  "files.associations": {
-    ".env*": "makefile",
-    "*.jsx": "javascriptreact",
-    "*.js": "javascriptreact",
-    "*.mjs": "javascript" // NEW - ES modules
-  },
-  "explorer.autoReveal": true,
-  "explorer.confirmDragAndDrop": false,
-  "explorer.confirmDelete": false,
-  "explorer.sortOrder": "type", // NEW - group by type
-  "explorer.compactFolders": false, // NEW - clearer structure
-
-  // ============================================
-  // JAVASCRIPT/TYPESCRIPT
-  // ============================================
-  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.preferences.quoteStyle": "single",
-  "javascript.suggest.completeFunctionCalls": true,
-  "javascript.suggest.autoImports": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "javascript.inlayHints.parameterNames.enabled": "none", // Changed from "literals"
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": false, // Changed from true
-  "javascript.inlayHints.parameterTypes.enabled": false, // Add this
-  "javascript.inlayHints.variableTypes.enabled": false, // Add this
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": false, // Add this
+  "javascript.suggest.autoImports": true,
 
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.preferences.quoteStyle": "single",
-  "typescript.suggest.completeFunctionCalls": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "typescript.inlayHints.parameterNames.enabled": "none", // Changed from "literals"
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": false, // Changed from true
-  "typescript.inlayHints.parameterTypes.enabled": false, // Add this
-  "typescript.inlayHints.variableTypes.enabled": false, // Add this
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": false, // Add this
-  "typescript.inlayHints.enumMemberValues.enabled": false, // Add this
-  "typescript.tsserver.maxTsServerMemory": 8192, // NEW - performance for large projects
+  "typescript.suggest.autoImports": true,
+  "typescript.tsserver.maxTsServerMemory": 8192,
 
-  // ============================================
-  // CODE ACTIONS & FORMATTING
-  // ============================================
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit", // Changed from "always" - more control
-    "source.organizeImports": "explicit",
-    "source.fixAll.format": "never" // Changed - let formatter handle this
-  },
+  // Inlay Hints — more modern/recommended balance 2026
+  "typescript.inlayHints.parameterNames.enabled": "literals",
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
 
   // ============================================
   // PRETTIER
@@ -216,137 +193,79 @@
   "prettier.tabWidth": 2,
   "prettier.trailingComma": "none",
   "prettier.jsxSingleQuote": true,
-  "prettier.bracketSpacing": true,
-  "prettier.arrowParens": "avoid", // NEW - cleaner arrow functions
-  "prettier.endOfLine": "lf", // NEW - consistency
+  "prettier.arrowParens": "avoid",
+  "prettier.endOfLine": "lf",
+  "prettier.requireConfig": true, // ← safety
 
   // ============================================
-  // WORKBENCH
+  // WORKBENCH & UI
   // ============================================
-  "workbench.editor.restoreViewState": true,
   "workbench.sideBar.location": "right",
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.statusBar.visible": true,
-  "workbench.commandPalette.preserveInput": true,
-  "workbench.editor.closeOnFileDelete": false,
-  "workbench.editor.revealIfOpen": true,
-  "workbench.editor.scrollToSwitchTabs": true,
-  "workbench.editor.tabSizing": "shrink",
-  "workbench.list.horizontalScrolling": true,
-  "workbench.list.defaultFindMode": "filter",
-  "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "bearded-icons",
-  "workbench.editor.limit.enabled": true, // NEW - limit open tabs
+  "workbench.colorTheme": "Flate",
+  "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 10,
   "workbench.editor.limit.perEditorGroup": true,
-  "workbench.startupEditor": "none", // NEW - faster startup
-  "workbench.editor.enablePreview": false, // NEW - always open in new tab
-  "workbench.tree.indent": 15, // NEW - better tree visibility
-  "workbench.activityBar.location": "default", // NEW - explicit setting
+  "workbench.editor.wrapTabs": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 15,
+  "workbench.editor.highlightModifiedTabs": true,
 
-  // ============================================
-  // BREADCRUMBS & NAVIGATION
-  // ============================================
-  "breadcrumbs.enabled": true, // Changed from false - very helpful for navigation
+  "breadcrumbs.enabled": true,
   "breadcrumbs.filePath": "on",
   "breadcrumbs.symbolPath": "on",
-
-  // ============================================
-  // SEARCH
-  // ============================================
-  "search.collapseResults": "auto",
-  "search.quickOpen.includeSymbols": false,
-  "search.showLineNumbers": true,
-  "search.smartCase": true,
-  "search.useIgnoreFiles": true, // NEW - respect .gitignore
 
   // ============================================
   // TERMINAL
   // ============================================
   "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
-  "terminal.integrated.gpuAcceleration": "off",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.tabs.enabled": true,
-  "terminal.integrated.defaultProfile.linux": "bash", // NEW - set default shell
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.cursorBlinking": true, // NEW - consistency with editor
+  "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
 
   // ============================================
-  // GIT
+  // GIT & GITLENS
   // ============================================
-  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "git.pruneOnFetch": true,
   "git.confirmSync": false,
-  "git.openRepositoryInParentFolders": "always",
-  "git.autofetch": true, // NEW - keep repo updated
-  "git.pruneOnFetch": true, // NEW - clean up remote branches
-  "git.untrackedChanges": "separate", // NEW - clearer staging area
+  "git.enableSmartCommit": true,
+  "git.untrackedChanges": "separate",
 
-  // ============================================
-  // GITLENS
-  // ============================================
-  "gitlens.blame.avatars": false,
-  "gitlens.blame.ignoreWhitespace": true,
   "gitlens.codeLens.authors.enabled": true,
   "gitlens.codeLens.recentChange.enabled": true,
-  "gitlens.codeLens.scopes": ["document", "containers", "blocks"],
-  "gitlens.hovers.annotations.changes": false,
   "gitlens.hovers.annotations.enabled": false,
-  "gitlens.keymap": "alternate",
-  "gitlens.views.repositories.files.layout": "list",
-  // "gitlens.currentLine.enabled": false, // NEW - can be distracting
 
   // ============================================
-  // EMMET
+  // EMMET & OTHERS
   // ============================================
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"
   },
   "emmet.triggerExpansionOnTab": true,
-  "emmet.showSuggestionsAsSnippets": true, // NEW - better integration
 
-  // ============================================
-  // ESLINT
-  // ============================================
   "eslint.alwaysShowStatus": true,
-  "eslint.lintTask.enable": true,
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "eslint.codeActionsOnSave.mode": "all", // NEW - run all available fixes
 
   // ============================================
-  // CURSOR-SPECIFIC
+  // PERFORMANCE & MISC
   // ============================================
-  "cursor.cpp.disabledLanguages": ["plaintext", "markdown", "scminput", "yaml"],
-  "cursor.cpp.enablePartialAccepts": true,
-  "cursor.composer.shouldChimeAfterChatFinishes": true,
-  "cursor.composer.usageSummaryDisplay": "always",
+  "files.maxMemoryForLargeFilesMB": 4096,
+  "search.followSymlinks": false,
+  "search.smartCase": true,
+  "search.useIgnoreFiles": true,
 
-  // ============================================
-  // MISC
-  // ============================================
-  "highlight-matching-tag.highlightFromContent": true,
-  "diffEditor.hideUnchangedRegions.enabled": true,
-  "diffEditor.ignoreTrimWhitespace": false, // NEW - see all changes
-  "redhat.telemetry.enabled": true,
-  "update.releaseTrack": "prerelease",
-  "json.schemas": [],
-  "security.workspace.trust.enabled": true, // NEW - security feature
-  "problems.showCurrentInStatus": true, // NEW - show errors in status bar
-  "debug.console.fontSize": 14, // NEW - readable debug output
-  "debug.console.wordWrap": true,
-  "workbench.editor.doubleClickTabToToggleEditorGroupSizes": "expand", // NEW - productivity
-  "window.commandCenter": true, // NEW - modern command palette
-  "window.density.editorTabHeight": "default",
+  "editor.semanticHighlighting.enabled": true,
+  "editor.experimental.asyncTokenization": true,
+
+  "window.commandCenter": true,
+  "security.workspace.trust.enabled": true,
   "workbench.settings.applyToAllProfiles": [
-  
-  ], // NEW - adjust if needed
 
-  // Better performance //
-  "editor.semanticHighlighting.enabled": true, // Better syntax highlighting
-  "editor.experimental.asyncTokenization": true, // Faster tokenization
-  "files.hotExit": "onExitAndWindowClose",
-  "react-native-tools.showUserTips": false,
-  "workbench.colorTheme": "Flate" // Save state on close
+
+  ],
+  "redhat.telemetry.enabled": false
 }
